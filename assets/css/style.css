@@ -350,6 +350,7 @@ section{
 	height: 100vh;
 	position: relative;
 	min-height: 659px;
+
 }
 
 .intro-box{
@@ -361,18 +362,29 @@ section{
 .intro{
 	display: table-cell;
 	vertical-align: middle;
+	
 }
+.intro  h1{
+	text-shadow: 1px 1px 0 #FDF607;
+}
+.intro p{
+	text-shadow: 1px 1px 0 black;
+}
+
+
+
 .header h1{
 	margin: 0;
 }
-.header h1, .header p{
-	color: #fff;
+.header h1 {
+	color: #3993A3;
 	letter-spacing: 2px;
 }
 .header p{
 	font-size: 32px;
 	padding-top: 0;
 	padding-bottom: 40px;
+	color:  #F4F3DD;
 }
 .header .vira-btn{
 	border-color: #fff;
