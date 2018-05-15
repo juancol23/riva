@@ -1,0 +1,1527 @@
+ <!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" lang="es">
+  <head>
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Fondo fotografia degradado en gris - Imagui</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href="/screen.css" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/favicon34x34.png"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+     <script type="text/javascript">
+      function sticky_relocate() {
+        if(document.getElementById("sticky-anchor") !== null){
+          var window_top = $(window).scrollTop();
+          var div_top = $('#sticky-anchor').offset().top;
+          if (window_top > div_top)
+            $('#sidead').addClass('stick')
+          else
+            $('#sidead').removeClass('stick');
+        }
+      }
+      $(function() {
+        $(window).scroll(sticky_relocate);
+        sticky_relocate();
+      });
+     </script>
+    
+    <script type="text/javascript">
+        </script>
+    <script type="text/javascript">
+    <!--
+      if (top.location!= self.location) {
+        top.location = self.location.href
+      }
+    //-->
+    </script>
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <script>
+      var cont = "http%3A%2F%2Fwww.imagui.com%2Fa%2Ffondo-fotografia-degradado-en-gris-TyEarnenp";
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '415925951787117',
+          cookie: true,
+          xfbml: true,
+          oauth: true,
+          status: true,
+          channel: 'http://www.imagui.com/channel.php'
+        });
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+          '//connect.facebook.net/es_ES/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+
+      function doLogin() {
+        FB.login(function(response) {
+          FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+              window.location = "http://www.imagui.com/register?cont=" + cont;
+            } else if (response.status === 'not_authorized') {
+              //window.location.reload();
+            } else {
+             // the user isn't logged in to Facebook.
+             //window.location.reload();
+            }
+          });
+           // handle the response
+         }, {scope: 'email'});
+      }
+      
+      function logout() {
+          FB.logout(function(response) {
+            // user is now logged out
+          });
+      }
+    </script>
+    <div id="web">
+      <div id="header">
+                <a id="logo" href="/"><img src="/img/logo2x.png" /></a>
+                
+          <div id="fb-button">
+        <a onclick="doLogin();return false;" href="#"><img src="/fb.png" alt="Entrar usando tu cuenta Facebook" /></a>
+      </div>
+        <script>
+      $( document ).ready(function() {
+        $( "#mobile-nav" ).click(function() {
+          $( "#menu" ).toggle();
+          $( "#header #user" ).toggle();
+          $( "#fb-button" ).toggle();
+        });
+      });
+    </script>
+    <img id="mobile-nav" src="/img/menu.svg" width="28" height="20" alt="Mobile navigation button" />
+    <div id="menu">
+      <ul>
+                <li class="create-album"><a href="/nuevo-album">Crear nuevo album</a></li>
+                <li><a href="/ultimos-votos">Últimas fotos votadas</a></li>
+        <li><a href="/usuarios">Últimos usuarios</a></li>
+        <li><a href="/comentarios">Últimos comentarios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <script src="http://cf.ads.kontextua.com/container/tags/58636.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $(document).scroll(function() {
+      if ($(document).scrollTop() > 800) {
+        $("#gotop").fadeIn("fast");
+      } else {
+        $("#gotop").fadeOut("fast");
+      }
+    });
+    $("#gotop").click(function() {
+      window.scrollTo(0, 0);
+      return false;
+    });
+
+    $(".aivoteup .notvoted").parent().hover(function() {
+      $(this).find("img").attr("src","/img/vote-up-on.svg");
+    }, function() {
+      $(this).find("img").attr("src","/img/vote-up.svg");
+    });
+
+    $(".aivotedown .notvoted").parent().hover(function() {
+      $(this).find("img").attr("src","/img/vote-down-on.svg");
+    }, function() {
+      $(this).find("img").attr("src","/img/vote-down.svg");
+    });
+
+    $(".voteup.notvoted").parent().click(function() {
+      var photoup = $(this);
+      photoup.find("img").attr("src","/img/vote-up-on.svg");
+      $.post("/photo-voteup", { photo: $(this).attr("data-id"), user: 0, z: 1 }, function(data) {
+          photoup.find("img").removeClass("notvoted");
+          photoup.find("img").addClass("voted");
+          photoup.parent().parent().find(".aivotedown img").attr("src", "/img/vote-down.svg");
+
+          var numvotesup = photoup.parent().parent().parent().find("#numvotesup");
+          numvotesup.text(parseInt(numvotesup.text()) + 1);
+          var numtotalvotes = photoup.parent().parent().parent().find("#numtotalvotes");
+          numtotalvotes.text(parseInt(numtotalvotes.text()) + 1);
+          if(photoup.parent().parent().find(".votedown.voted").length) {
+            numvotesup.text(parseInt(numvotesup.text()) + 1);
+            numtotalvotes.text(parseInt(numtotalvotes.text()) + 1);
+          }
+        });
+      return false;
+    });
+
+    $(".votedown.notvoted").parent().click(function() {
+      var photodown = $(this);
+      photodown.find("img").attr("src","/img/vote-down-on.svg");
+      $.post("/photo-votedown", { photo: $(this).attr("data-id"), user: 0, z: 1 }, function(data) {
+          photodown.find("img").removeClass("notvoted");
+          photodown.find("img").addClass("voted");
+          photodown.parent().parent().find(".aivoteup img").attr("src", "/img/vote-up.svg");
+
+          var numvotesdown = photodown.parent().parent().parent().find("#numvotesdown");
+          numvotesdown.text(parseInt(numvotesdown.text()) + 1);
+          var numtotalvotes = photodown.parent().parent().parent().find("#numtotalvotes");
+          numtotalvotes.text(parseInt(numtotalvotes.text()) - 1);
+          if(photodown.parent().parent().find(".voteup.voted").length) {
+            numvotesdown.text(parseInt(numvotesdown.text()) +1);
+            numtotalvotes.text(parseInt(numtotalvotes.text()) - 1);
+          }
+        });
+
+      return false;
+    });
+
+    var sendingcomment = 0;
+
+    $(".sendcomment").click(function() {
+      var button = $(this);
+      var body = $(this).parent().find(".commentbody").val();
+      var hash = $(this).attr("img-hash");
+      if(sendingcomment == 0) {
+        sendingcomment = 1;
+        $.post("/photo-comment", { photo: $(this).attr("data-id"), body: body, user: 0, z: 1 }, function(data) {
+          button.parent().find(".commentbody").val("");
+          var newcomment = $("#comment-template .comment").clone(true);
+          newcomment.find("img").attr("src", "https://graph.facebook.com/" +  + "/picture?type=square");
+          newcomment.find(".commentbody").text(body);
+          newcomment.find(".commentmeta a").text("");
+          newcomment.find(".commentmeta a").attr("href", "/u/");
+          $("#" + hash + " .comments").prepend(newcomment);
+        });
+      }
+      return false;
+    });
+    $(".aieliminar").click(function() {
+      $(".aimenu li").removeClass("selected");
+      $(this).parent().addClass("selected");
+      $("#" + $(this).attr("data-id") + " .flagtypes").show();
+      $("#" + $(this).attr("data-id") + " .comments").hide();
+      return false;
+    });
+    $(".cancelflag").click(function() {
+      $(".flagtypes input").each(function() {
+        this.checked = false;
+      });
+      $(".aimenu li").removeClass("selected");
+      $(this).parent().parent().hide();
+      $(".copydetails").hide();
+      $(this).parent().parent().parent().find(".comments").show();
+      return false;
+    });
+    $(".flagimage").click(function() {
+      var hash = $(this).attr("hash");
+      if($("input:radio[name='flagtype" + hash + "']").is(":checked")) {
+        if($("input:radio[id='flagcopyright" + hash + "']").is(":checked")) {
+          if(!$("input:checkbox[id='chkcopy" + hash + "']").is(":checked")) {
+            return false;
+          }
+          if($("#copyname" + hash).val() == "") {
+            return false;
+          }
+          if($("#copyemail" + hash).val() == "") {
+            return false;
+          }
+          if($("#copyexp" + hash).val() == "") {
+            return false;
+          }
+        }
+        $.post("/photo-flag", { photo: hash, user: 0, flagtype: $("#"+hash+" input[type='radio']:checked").val(), name: $("#copyname" + hash).val(), email: $("#copyemail" + hash).val(), explanation: $("#copyexp" + hash).val(), z: 1 }, function(data) {
+          $("#" + hash + " *").hide();
+          $(".copydetails").hide();
+          $(".flagtypes input").each(function() {
+            this.checked = false;
+          });
+          var imgsrc = $("#img_" + hash).attr("src");
+          $("#" + hash).append("<div class='msgdeleted'><p class='imgdeleted'><img src='" + imgsrc + "' width='85' /><strong>Imagen eliminida!</strong> Gracias por colaborar a mejorar Imagui.com!</p></div>");
+          var top = $("#" + hash).position().top - 50;
+          $('body, html').animate({scrollTop: top}, 0);
+        });
+      }
+      return false;
+    });
+    $(".flagtypes input:radio").click(function() {
+      $(".copydetails").hide();
+    });
+    $(".flagtypes input:radio[value='copyright']").click(function() {
+      $(".copydetails").show();
+    });
+  });
+</script>
+<div id="gotop">
+  <a href="#"><img src="/img/gotop.png" alt="Scroll to Top of the page" /></a>
+</div>
+<div id="comment-template" style="display: none;">
+  <div class="comment">
+    <img src="" />
+    <div class="commenttxt">
+      <p class="commentmeta"><a href=""></a></p>
+      <p class="commentbody"></p>
+    </div>
+  </div>
+</div>
+    <div id="maincontent">
+            <div id="albumtxt">
+      <h1>Fondo fotografia degradado en gris</h1>
+      <p>Este album de '<strong>Fondo fotografia degradado en gris</strong>' con <strong>17 fotos</strong> e imágenes no tiene descripción. Puedes sugerir una descripción de éste álbum y publicar nuevas fotos en él.</p>
+      
+      </div>
+                <div id="twoads">
+              <div style="margin: 0 20px 30px -10px; float: left; width: 300px">
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-7363809219244122";
+          google_ad_width = 300;
+          google_ad_height = 250;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        </div>
+
+        <div style="margin: 0 -10px 0 0; float: left; width: 300px">
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-7363809219244122";
+          google_ad_width = 300;
+          google_ad_height = 250;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        </div>
+            </div>
+    
+    <div id="albumimgs">
+                <div class="algumimg" id="dT88xKEKc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322890" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">19</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322890" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">19</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_dT88xKEKc" src="http://www.allfons.ru/pic/201112/1920x1200/allfons.ru-1457.jpg" alt="Free Download Wallpapers Degradados Fondos De Pantalla Textura La ..." title="Free Download Wallpapers Degradados Fondos De Pantalla Textura La ..." /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="dT88xKEKc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypedT88xKEKc" value="inappropriate" id="flaginappropriatedT88xKEKc" /><label for="flaginappropriatedT88xKEKc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedT88xKEKc" value="irrelevant" id="flagirrelevantdT88xKEKc" /><label for="flagirrelevantdT88xKEKc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedT88xKEKc" value="copyright" id="flagcopyrightdT88xKEKc" /><label for="flagcopyrightdT88xKEKc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamedT88xKEKc">Nombre:</label>
+                    <input type="text" name="copynamedT88xKEKc" value="" id="copynamedT88xKEKc" />
+                    <label for="copyemaildT88xKEKc">E-mail:</label>
+                    <input type="text" name="copyemaildT88xKEKc" value="" id="copyemaildT88xKEKc" />
+                  </div>
+                  <label for="copyexpdT88xKEKc">Explicación detallada del caso:</label>
+                  <textarea name="copyexpdT88xKEKc" id="copyexpdT88xKEKc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopydT88xKEKc" /><label for="chkcopydT88xKEKc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="dT88xKEKc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="dc8Arzqoi">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059686" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">10</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059686" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">10</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_dc8Arzqoi" src="http://1.bp.blogspot.com/-i5K2CQPGPrA/UIzJbm1Eo1I/AAAAAAAAAhc/srYOP7AG9zA/s1600/paso0.jpg" alt="The Blog del Rey Principiante: TRATAMIENTO DE TIPOGRAFIA INFANTIL" title="The Blog del Rey Principiante: TRATAMIENTO DE TIPOGRAFIA INFANTIL" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="dc8Arzqoi" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypedc8Arzqoi" value="inappropriate" id="flaginappropriatedc8Arzqoi" /><label for="flaginappropriatedc8Arzqoi">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedc8Arzqoi" value="irrelevant" id="flagirrelevantdc8Arzqoi" /><label for="flagirrelevantdc8Arzqoi">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedc8Arzqoi" value="copyright" id="flagcopyrightdc8Arzqoi" /><label for="flagcopyrightdc8Arzqoi">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamedc8Arzqoi">Nombre:</label>
+                    <input type="text" name="copynamedc8Arzqoi" value="" id="copynamedc8Arzqoi" />
+                    <label for="copyemaildc8Arzqoi">E-mail:</label>
+                    <input type="text" name="copyemaildc8Arzqoi" value="" id="copyemaildc8Arzqoi" />
+                  </div>
+                  <label for="copyexpdc8Arzqoi">Explicación detallada del caso:</label>
+                  <textarea name="copyexpdc8Arzqoi" id="copyexpdc8Arzqoi" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopydc8Arzqoi" /><label for="chkcopydc8Arzqoi">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="dc8Arzqoi">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="9cppb8ndi">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322714" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">7</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322714" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">7</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_9cppb8ndi" src="http://wallpapers.org.es/wp-content/uploads/2012/09/colores_claros.jpeg" alt="Colores Claros - Wallpapers" title="Colores Claros - Wallpapers" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="9cppb8ndi" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtype9cppb8ndi" value="inappropriate" id="flaginappropriate9cppb8ndi" /><label for="flaginappropriate9cppb8ndi">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9cppb8ndi" value="irrelevant" id="flagirrelevant9cppb8ndi" /><label for="flagirrelevant9cppb8ndi">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9cppb8ndi" value="copyright" id="flagcopyright9cppb8ndi" /><label for="flagcopyright9cppb8ndi">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copyname9cppb8ndi">Nombre:</label>
+                    <input type="text" name="copyname9cppb8ndi" value="" id="copyname9cppb8ndi" />
+                    <label for="copyemail9cppb8ndi">E-mail:</label>
+                    <input type="text" name="copyemail9cppb8ndi" value="" id="copyemail9cppb8ndi" />
+                  </div>
+                  <label for="copyexp9cppb8ndi">Explicación detallada del caso:</label>
+                  <textarea name="copyexp9cppb8ndi" id="copyexp9cppb8ndi" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopy9cppb8ndi" /><label for="chkcopy9cppb8ndi">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="9cppb8ndi">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                              <div id="twoads">
+              <div style="margin: 0 20px 30px -10px; float: left; width: 300px">
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-7363809219244122";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+              </div>
+
+              <div style="margin: 0 -10px 0 0; float: left; width: 300px">
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-7363809219244122";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+              </div>
+            </div>
+                  <div class="algumimg" id="ycoErz9gi">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059716" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">6</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059716" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">6</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_ycoErz9gi" src="http://www.inditecar.com/images/Imagenes/fondo.jpg" alt="Inditecar Box, S.L" title="Inditecar Box, S.L" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="ycoErz9gi" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeycoErz9gi" value="inappropriate" id="flaginappropriateycoErz9gi" /><label for="flaginappropriateycoErz9gi">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeycoErz9gi" value="irrelevant" id="flagirrelevantycoErz9gi" /><label for="flagirrelevantycoErz9gi">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeycoErz9gi" value="copyright" id="flagcopyrightycoErz9gi" /><label for="flagcopyrightycoErz9gi">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameycoErz9gi">Nombre:</label>
+                    <input type="text" name="copynameycoErz9gi" value="" id="copynameycoErz9gi" />
+                    <label for="copyemailycoErz9gi">E-mail:</label>
+                    <input type="text" name="copyemailycoErz9gi" value="" id="copyemailycoErz9gi" />
+                  </div>
+                  <label for="copyexpycoErz9gi">Explicación detallada del caso:</label>
+                  <textarea name="copyexpycoErz9gi" id="copyexpycoErz9gi" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyycoErz9gi" /><label for="chkcopyycoErz9gi">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="ycoErz9gi">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="yTkk48ALc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322878" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">4</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322878" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">4</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_yTkk48ALc" src="http://fondopantalla.com.es/file/421/1440x900/crop/fondo-de-pantalla-degradado-azul.jpg" alt="Fondo Gris Degradado Imagui Picture" title="Fondo Gris Degradado Imagui Picture" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="yTkk48ALc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeyTkk48ALc" value="inappropriate" id="flaginappropriateyTkk48ALc" /><label for="flaginappropriateyTkk48ALc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeyTkk48ALc" value="irrelevant" id="flagirrelevantyTkk48ALc" /><label for="flagirrelevantyTkk48ALc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeyTkk48ALc" value="copyright" id="flagcopyrightyTkk48ALc" /><label for="flagcopyrightyTkk48ALc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameyTkk48ALc">Nombre:</label>
+                    <input type="text" name="copynameyTkk48ALc" value="" id="copynameyTkk48ALc" />
+                    <label for="copyemailyTkk48ALc">E-mail:</label>
+                    <input type="text" name="copyemailyTkk48ALc" value="" id="copyemailyTkk48ALc" />
+                  </div>
+                  <label for="copyexpyTkk48ALc">Explicación detallada del caso:</label>
+                  <textarea name="copyexpyTkk48ALc" id="copyexpyTkk48ALc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyyTkk48ALc" /><label for="chkcopyyTkk48ALc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="yTkk48ALc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="LTK4rbKrc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322902" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">4</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322902" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">4</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_LTK4rbKrc" src="http://fondopantalla.com.es/file/492/2560x1600/crop/fondo-abstracto-degradado.jpg" alt="Fondo Abstracto Degradado Pictures" title="Fondo Abstracto Degradado Pictures" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="LTK4rbKrc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeLTK4rbKrc" value="inappropriate" id="flaginappropriateLTK4rbKrc" /><label for="flaginappropriateLTK4rbKrc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLTK4rbKrc" value="irrelevant" id="flagirrelevantLTK4rbKrc" /><label for="flagirrelevantLTK4rbKrc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLTK4rbKrc" value="copyright" id="flagcopyrightLTK4rbKrc" /><label for="flagcopyrightLTK4rbKrc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameLTK4rbKrc">Nombre:</label>
+                    <input type="text" name="copynameLTK4rbKrc" value="" id="copynameLTK4rbKrc" />
+                    <label for="copyemailLTK4rbKrc">E-mail:</label>
+                    <input type="text" name="copyemailLTK4rbKrc" value="" id="copyemailLTK4rbKrc" />
+                  </div>
+                  <label for="copyexpLTK4rbKrc">Explicación detallada del caso:</label>
+                  <textarea name="copyexpLTK4rbKrc" id="copyexpLTK4rbKrc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyLTK4rbKrc" /><label for="chkcopyLTK4rbKrc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="LTK4rbKrc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="jTxxp84ec">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322869" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">2</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322869" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">2</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_jTxxp84ec" src="http://www.adultosninosasociacion.org/images/fondo_degradado_gris.png" alt="Ana" title="Ana" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="jTxxp84ec" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypejTxxp84ec" value="inappropriate" id="flaginappropriatejTxxp84ec" /><label for="flaginappropriatejTxxp84ec">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypejTxxp84ec" value="irrelevant" id="flagirrelevantjTxxp84ec" /><label for="flagirrelevantjTxxp84ec">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypejTxxp84ec" value="copyright" id="flagcopyrightjTxxp84ec" /><label for="flagcopyrightjTxxp84ec">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamejTxxp84ec">Nombre:</label>
+                    <input type="text" name="copynamejTxxp84ec" value="" id="copynamejTxxp84ec" />
+                    <label for="copyemailjTxxp84ec">E-mail:</label>
+                    <input type="text" name="copyemailjTxxp84ec" value="" id="copyemailjTxxp84ec" />
+                  </div>
+                  <label for="copyexpjTxxp84ec">Explicación detallada del caso:</label>
+                  <textarea name="copyexpjTxxp84ec" id="copyexpjTxxp84ec" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyjTxxp84ec" /><label for="chkcopyjTxxp84ec">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="jTxxp84ec">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="MTL6p7o6c">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059757" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">1</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059757" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">1</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_MTL6p7o6c" src="http://informaticaiesfn.files.wordpress.com/2010/06/rca-degradado.gif" alt="Conceptos en artes plásticas | Recursos Educativos" title="Conceptos en artes plásticas | Recursos Educativos" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="MTL6p7o6c" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeMTL6p7o6c" value="inappropriate" id="flaginappropriateMTL6p7o6c" /><label for="flaginappropriateMTL6p7o6c">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeMTL6p7o6c" value="irrelevant" id="flagirrelevantMTL6p7o6c" /><label for="flagirrelevantMTL6p7o6c">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeMTL6p7o6c" value="copyright" id="flagcopyrightMTL6p7o6c" /><label for="flagcopyrightMTL6p7o6c">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameMTL6p7o6c">Nombre:</label>
+                    <input type="text" name="copynameMTL6p7o6c" value="" id="copynameMTL6p7o6c" />
+                    <label for="copyemailMTL6p7o6c">E-mail:</label>
+                    <input type="text" name="copyemailMTL6p7o6c" value="" id="copyemailMTL6p7o6c" />
+                  </div>
+                  <label for="copyexpMTL6p7o6c">Explicación detallada del caso:</label>
+                  <textarea name="copyexpMTL6p7o6c" id="copyexpMTL6p7o6c" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyMTL6p7o6c" /><label for="chkcopyMTL6p7o6c">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="MTL6p7o6c">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="xcggnEkei">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322732" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">1</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322732" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">1</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_xcggnEkei" src="http://www.redcoon.es/res/shop/cataloge/product_315/B518074.jpg" alt="walimex pro 16504 / Fondo degradado gris · Fondo degradado de 1 ..." title="walimex pro 16504 / Fondo degradado gris · Fondo degradado de 1 ..." /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="xcggnEkei" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypexcggnEkei" value="inappropriate" id="flaginappropriatexcggnEkei" /><label for="flaginappropriatexcggnEkei">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypexcggnEkei" value="irrelevant" id="flagirrelevantxcggnEkei" /><label for="flagirrelevantxcggnEkei">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypexcggnEkei" value="copyright" id="flagcopyrightxcggnEkei" /><label for="flagcopyrightxcggnEkei">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamexcggnEkei">Nombre:</label>
+                    <input type="text" name="copynamexcggnEkei" value="" id="copynamexcggnEkei" />
+                    <label for="copyemailxcggnEkei">E-mail:</label>
+                    <input type="text" name="copyemailxcggnEkei" value="" id="copyemailxcggnEkei" />
+                  </div>
+                  <label for="copyexpxcggnEkei">Explicación detallada del caso:</label>
+                  <textarea name="copyexpxcggnEkei" id="copyexpxcggnEkei" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyxcggnEkei" /><label for="chkcopyxcggnEkei">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="xcggnEkei">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="di8Arzk9T">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059642" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059642" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_di8Arzk9T" src="http://www.precoinprevencion.com/media/fondo-degradado.jpg" alt="Degradado gris - Imagui" title="Degradado gris - Imagui" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="di8Arzk9T" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypedi8Arzk9T" value="inappropriate" id="flaginappropriatedi8Arzk9T" /><label for="flaginappropriatedi8Arzk9T">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedi8Arzk9T" value="irrelevant" id="flagirrelevantdi8Arzk9T" /><label for="flagirrelevantdi8Arzk9T">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypedi8Arzk9T" value="copyright" id="flagcopyrightdi8Arzk9T" /><label for="flagcopyrightdi8Arzk9T">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamedi8Arzk9T">Nombre:</label>
+                    <input type="text" name="copynamedi8Arzk9T" value="" id="copynamedi8Arzk9T" />
+                    <label for="copyemaildi8Arzk9T">E-mail:</label>
+                    <input type="text" name="copyemaildi8Arzk9T" value="" id="copyemaildi8Arzk9T" />
+                  </div>
+                  <label for="copyexpdi8Arzk9T">Explicación detallada del caso:</label>
+                  <textarea name="copyexpdi8Arzk9T" id="copyexpdi8Arzk9T" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopydi8Arzk9T" /><label for="chkcopydi8Arzk9T">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="di8Arzk9T">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="LiK8ab4eT">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059654" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059654" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_LiK8ab4eT" src="http://ibayamariaapuntesdwm.files.wordpress.com/2011/03/sin-tc3adtulo-1.jpg" alt="Fondo degradado gris - Imagui" title="Fondo degradado gris - Imagui" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="LiK8ab4eT" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeLiK8ab4eT" value="inappropriate" id="flaginappropriateLiK8ab4eT" /><label for="flaginappropriateLiK8ab4eT">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLiK8ab4eT" value="irrelevant" id="flagirrelevantLiK8ab4eT" /><label for="flagirrelevantLiK8ab4eT">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLiK8ab4eT" value="copyright" id="flagcopyrightLiK8ab4eT" /><label for="flagcopyrightLiK8ab4eT">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameLiK8ab4eT">Nombre:</label>
+                    <input type="text" name="copynameLiK8ab4eT" value="" id="copynameLiK8ab4eT" />
+                    <label for="copyemailLiK8ab4eT">E-mail:</label>
+                    <input type="text" name="copyemailLiK8ab4eT" value="" id="copyemailLiK8ab4eT" />
+                  </div>
+                  <label for="copyexpLiK8ab4eT">Explicación detallada del caso:</label>
+                  <textarea name="copyexpLiK8ab4eT" id="copyexpLiK8ab4eT" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyLiK8ab4eT" /><label for="chkcopyLiK8ab4eT">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="LiK8ab4eT">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="9T4EAMgqc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059724" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059724" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_9T4EAMgqc" src="http://media.tumblr.com/tumblr_kztmbyqHne1qb72rz.jpg" alt="Memomiliano - Como crear degradados con CSS 3" title="Memomiliano - Como crear degradados con CSS 3" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="9T4EAMgqc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtype9T4EAMgqc" value="inappropriate" id="flaginappropriate9T4EAMgqc" /><label for="flaginappropriate9T4EAMgqc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9T4EAMgqc" value="irrelevant" id="flagirrelevant9T4EAMgqc" /><label for="flagirrelevant9T4EAMgqc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9T4EAMgqc" value="copyright" id="flagcopyright9T4EAMgqc" /><label for="flagcopyright9T4EAMgqc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copyname9T4EAMgqc">Nombre:</label>
+                    <input type="text" name="copyname9T4EAMgqc" value="" id="copyname9T4EAMgqc" />
+                    <label for="copyemail9T4EAMgqc">E-mail:</label>
+                    <input type="text" name="copyemail9T4EAMgqc" value="" id="copyemail9T4EAMgqc" />
+                  </div>
+                  <label for="copyexp9T4EAMgqc">Explicación detallada del caso:</label>
+                  <textarea name="copyexp9T4EAMgqc" id="copyexp9T4EAMgqc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopy9T4EAMgqc" /><label for="chkcopy9T4EAMgqc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="9T4EAMgqc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="9cRdXG9oi">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059734" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059734" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_9cRdXG9oi" src="http://i45.tinypic.com/2cr4i9c.jpg" alt="Base Avalancha - Foro Final Fantasy - .Guia del Buen Firmero. - El ..." title="Base Avalancha - Foro Final Fantasy - .Guia del Buen Firmero. - El ..." /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="9cRdXG9oi" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtype9cRdXG9oi" value="inappropriate" id="flaginappropriate9cRdXG9oi" /><label for="flaginappropriate9cRdXG9oi">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9cRdXG9oi" value="irrelevant" id="flagirrelevant9cRdXG9oi" /><label for="flagirrelevant9cRdXG9oi">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9cRdXG9oi" value="copyright" id="flagcopyright9cRdXG9oi" /><label for="flagcopyright9cRdXG9oi">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copyname9cRdXG9oi">Nombre:</label>
+                    <input type="text" name="copyname9cRdXG9oi" value="" id="copyname9cRdXG9oi" />
+                    <label for="copyemail9cRdXG9oi">E-mail:</label>
+                    <input type="text" name="copyemail9cRdXG9oi" value="" id="copyemail9cRdXG9oi" />
+                  </div>
+                  <label for="copyexp9cRdXG9oi">Explicación detallada del caso:</label>
+                  <textarea name="copyexp9cRdXG9oi" id="copyexp9cRdXG9oi" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopy9cRdXG9oi" /><label for="chkcopy9cRdXG9oi">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="9cRdXG9oi">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="LTK8ab9rc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059742" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059742" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_LTK8ab9rc" src="http://www.pauloporta.com/Fotografia/Artigos/efectoscor/degradiferen1.jpg" alt="Paulo Porta. Efectos color" title="Paulo Porta. Efectos color" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="LTK8ab9rc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeLTK8ab9rc" value="inappropriate" id="flaginappropriateLTK8ab9rc" /><label for="flaginappropriateLTK8ab9rc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLTK8ab9rc" value="irrelevant" id="flagirrelevantLTK8ab9rc" /><label for="flagirrelevantLTK8ab9rc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeLTK8ab9rc" value="copyright" id="flagcopyrightLTK8ab9rc" /><label for="flagcopyrightLTK8ab9rc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameLTK8ab9rc">Nombre:</label>
+                    <input type="text" name="copynameLTK8ab9rc" value="" id="copynameLTK8ab9rc" />
+                    <label for="copyemailLTK8ab9rc">E-mail:</label>
+                    <input type="text" name="copyemailLTK8ab9rc" value="" id="copyemailLTK8ab9rc" />
+                  </div>
+                  <label for="copyexpLTK8ab9rc">Explicación detallada del caso:</label>
+                  <textarea name="copyexpLTK8ab9rc" id="copyexpLTK8ab9rc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyLTK8ab9rc" /><label for="chkcopyLTK8ab9rc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="LTK8ab9rc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="ycoErznai">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059749" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059749" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_ycoErznai" src="http://fondopantalla.com.es/file/492/600x338/16:9/fondo-abstracto-degradado_1949794155.jpg" alt="Fondos degradados - Imagui" title="Fondos degradados - Imagui" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="ycoErznai" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypeycoErznai" value="inappropriate" id="flaginappropriateycoErznai" /><label for="flaginappropriateycoErznai">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeycoErznai" value="irrelevant" id="flagirrelevantycoErznai" /><label for="flagirrelevantycoErznai">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypeycoErznai" value="copyright" id="flagcopyrightycoErznai" /><label for="flagcopyrightycoErznai">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynameycoErznai">Nombre:</label>
+                    <input type="text" name="copynameycoErznai" value="" id="copynameycoErznai" />
+                    <label for="copyemailycoErznai">E-mail:</label>
+                    <input type="text" name="copyemailycoErznai" value="" id="copyemailycoErznai" />
+                  </div>
+                  <label for="copyexpycoErznai">Explicación detallada del caso:</label>
+                  <textarea name="copyexpycoErznai" id="copyexpycoErznai" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopyycoErznai" /><label for="chkcopyycoErznai">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="ycoErznai">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="bTyXAz4nc">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="14059763" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="14059763" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_bTyXAz4nc" src="http://www.cristalab.com/images/tutoriales/halftone/halftone01.jpg" alt="Efecto de Medio Tono (Halftone) con Photoshop" title="Efecto de Medio Tono (Halftone) con Photoshop" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="bTyXAz4nc" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtypebTyXAz4nc" value="inappropriate" id="flaginappropriatebTyXAz4nc" /><label for="flaginappropriatebTyXAz4nc">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypebTyXAz4nc" value="irrelevant" id="flagirrelevantbTyXAz4nc" /><label for="flagirrelevantbTyXAz4nc">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtypebTyXAz4nc" value="copyright" id="flagcopyrightbTyXAz4nc" /><label for="flagcopyrightbTyXAz4nc">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copynamebTyXAz4nc">Nombre:</label>
+                    <input type="text" name="copynamebTyXAz4nc" value="" id="copynamebTyXAz4nc" />
+                    <label for="copyemailbTyXAz4nc">E-mail:</label>
+                    <input type="text" name="copyemailbTyXAz4nc" value="" id="copyemailbTyXAz4nc" />
+                  </div>
+                  <label for="copyexpbTyXAz4nc">Explicación detallada del caso:</label>
+                  <textarea name="copyexpbTyXAz4nc" id="copyexpbTyXAz4nc" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopybTyXAz4nc" /><label for="chkcopybTyXAz4nc">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="bTyXAz4nc">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+                <div class="algumimg" id="9i44bMBRT">
+            <div class="aivotes">
+                            <div class="aivoteup"><a data-id="20322928" href="#" title="Dar un voto positivo a esta imagen"><img class="voteup notvoted" src="/img/vote-up.svg" width="22" height="20" alt="Voto positivo" /></a></div>
+              
+              <div class="aicurrentrank"><strong id="numtotalvotes">0</strong><br />puntos</div>
+
+                            <div class="aivotedown"><a data-id="20322928" href="#" title="Dar un voto negativo a esta imagen"><img class="votedown notvoted" src="/img/vote-down.svg" width="22" height="20" alt="Voto negativo" /></a></div>
+              
+              <small class="votes"><span id="numvotesup">0</span> <img src="/img/vote-up-on.svg" alt="Votos positivos" style="width:12px;height:12px; margin-left: -1px" /> &nbsp; <span id="numvotesdown">0</span> <img style="width:12px;height:12px; vertical-align:bottom; margin-left: -1px" src="/img/vote-down-on.svg" alt="Votos negativos" /></small>
+            </div>
+                        <div class="aicontainer"><img class="img" id="img_9i44bMBRT" src="http://www.photoshop-designs.com/mlaqr/tutoriales/42260/92385879.png" alt="Tutorial] Fondo de Pantalla estilo Tech" title="Tutorial] Fondo de Pantalla estilo Tech" /></div>
+            
+            <div class="socialinfo">
+              <div class="aisocial"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp" target="_blank"><img src="/compartir.png" alt="Compartir en Facebook"></a></div>
+            <script>
+              $( document ).ready(function() {
+                $( ".aicomments" ).click(function() {
+                  $(this).closest('.algumimg').find('.comments').toggle();
+                });
+              });
+            </script>
+              <img class="aicomments" src="/img/comment.svg" width="20" height="20" alt="Comments button icon" />
+              <div class="aiinfo">                
+                <p class="postedby">Publicada por <a href="/u/lorenzaamador"><img class="authorpic" src="http://www.footballzz.com/img/jogadores/61/59261_pri_amador.jpg" width="18" />lorenzaamador</a> hace:  3 años</p>
+              <p class="aieliminarp">
+                <a class="aieliminar" data-id="9i44bMBRT" href="#">Eliminar esta imagen</a>
+                              </p>
+              </div>
+              <div class="aimenu">
+                              </div>
+            </div>
+            <div class="flagtypes">
+              <p>Indica el motivo para eliminar esta imagen:</p>
+              <div>
+                <input type="radio" name="flagtype9i44bMBRT" value="inappropriate" id="flaginappropriate9i44bMBRT" /><label for="flaginappropriate9i44bMBRT">La imagen muestra contenido <strong>sexual, violento o inapropiado</strong></label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9i44bMBRT" value="irrelevant" id="flagirrelevant9i44bMBRT" /><label for="flagirrelevant9i44bMBRT">La imagen <strong>no es relevante</strong> en este album</label>
+              </div>
+              <div>
+                <input type="radio" name="flagtype9i44bMBRT" value="copyright" id="flagcopyright9i44bMBRT" /><label for="flagcopyright9i44bMBRT">Poseo los derechos de <strong>copyright</strong> de esta imagen y quiero que sea eliminada de Imagui.com</label>
+                <div class="copydetails">
+                  <div>
+                    <label for="copyname9i44bMBRT">Nombre:</label>
+                    <input type="text" name="copyname9i44bMBRT" value="" id="copyname9i44bMBRT" />
+                    <label for="copyemail9i44bMBRT">E-mail:</label>
+                    <input type="text" name="copyemail9i44bMBRT" value="" id="copyemail9i44bMBRT" />
+                  </div>
+                  <label for="copyexp9i44bMBRT">Explicación detallada del caso:</label>
+                  <textarea name="copyexp9i44bMBRT" id="copyexp9i44bMBRT" rows="4" cols="50"></textarea>
+                  <p class="copylegal"><input type="checkbox" id="chkcopy9i44bMBRT" /><label for="chkcopy9i44bMBRT">Juro, bajo pena de perjurio, que la información de esta notificación es correcta y que soy el propietario de los derechos de autor o estoy autorizado a actuar en nombre del propietario de un derecho exclusivo que presuntamente se ha infringido.</label></p>
+                </div>
+              </div>
+              <p class="flagbuttons"><a href="#" class="flagimage button small" hash="9i44bMBRT">Enviar</a> - <a href="#" class="cancelflag">cancelar</a></p>
+            </div>
+                            <div class="comments">
+                                                                  <div class="comment registercomment">
+                    <p><a onclick="doLogin();return false;" href="#">Entra con tu cuenta Facebook</a> para comentar</p>
+                  </div>
+                              </div>
+            </div>
+                        
+            </div>
+      <div class="social">
+        <div class="fb-like" data-href="http://www.imagui.com" data-send="false" data-layout="box_count" data-width="55" data-show-faces="false" style="float:left;"></div>
+        <div style="float:left; margin: 0 10px"><g:plusone size="tall" href="http://www.imagui.com"></g:plusone></div>
+        <div style="float:left;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-url="http://www.imagui.com/a/fondo-fotografia-degradado-en-gris-TyEarnenp">Tweet</a></div>
+        
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <script src="https://apis.google.com/js/plusone.js"></script>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+      </div>    </div>
+    
+
+    <div id="sidebar">
+                  <div class="addphoto">
+              <a class="button" href="/anadir-imagenes/TyEarnenp"><span>+</span> Añadir imágenes a este álbum</a>
+            </div>
+      <div class="box author">
+        <h2>Autor</h2>
+                <a href="/u/lorenzaamador"><img class="authorpic" src="/avatar/LXiMEMTea.jpg" width="80" style=" -webkit-border-radius: 30px; 
+	border-radius: 40px;" /></a>        <a href="/u/lorenzaamador" class="authorname">lorenzaamador</a><br />
+        <p><strong>663</strong> albums</p>
+
+            </div>
+
+      <div class="box info">
+        <h2>Información</h2>
+        <h3>Fondo fotografia degradado en gris</h3>
+        <p id="totalphotos"><strong>17</strong> fotos</p>
+        <p id="totalviews"><strong>519</strong> vistas</p>
+                <p>Creado hace 3 años. 
+                  </p>
+                        <div class="social">
+        </div>
+
+      </div>
+                  <div class="cff">
+      <h2>Últimas galerías publicadas</h2>
+              <div class="promo"><div class="promoi">
+          <a href="/a/bren-BdcrakqT9"><img src="http://imgs.imagui.com/5176d40652269f8cbd80d98519194b15/2.bp.blogspot.com/-NBgGr0yaqDg/Tcw0ra4WG7I/AAAAAAAAKa8/A-stGTp27Io/s1600/CARS%252B1.jpg/150x150c/498022737b93a8b1dea6f4a018fff6f31.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/bren-BdcrakqT9">bren</a></p>
+        </div>
+                <div class="promo"><div class="promoi">
+          <a href="/a/ropones-para-bautizo-y9izxR9cE"><img src="http://imgs.imagui.com/65e5f5a6ca07e992e0ebf0af69f7e34a/www.emeliaropones.com/images/ropones-para-bautizo/IMG_6409%402x.JPG/150x150c/42c354972a5ea94f69f15833e6b599551.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/ropones-para-bautizo-y9izxR9cE">Ropones para Bautizo</a></p>
+        </div>
+                <div class="promo"><div class="promoi">
+          <a href="/a/michelle-keila-opT5bRqiB"><img src="http://imgs.imagui.com/c67cabe6e777f5b4f50466d02774c95a/1.bp.blogspot.com/-udbbJpeoKA4/ThRdxDZkmQI/AAAAAAAAB70/DYqQxvKMryk/s400/alice14.png/150x150c/3df4cd8ecd6d0663daf855d1c6bdead81.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/michelle-keila-opT5bRqiB">Michelle Keila</a></p>
+        </div>
+                <div class="promo"><div class="promoi">
+          <a href="/a/tatuajes-en-hombres-zyck47aTE"><img src="http://imgs.imagui.com/923e5ffebc413082b8a3865d5045c191/www.tatuajesparahombres.es/wp-content/uploads/2016/06/tatuaje-espalda.jpg/150x150c/f8e2521e99b440b830352db4b080a2071.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/tatuajes-en-hombres-zyck47aTE">tatuajes en hombres</a></p>
+        </div>
+                <div class="promo"><div class="promoi">
+          <a href="/a/fotos-varias-6ncXnRoTB"><img src="http://imgs.imagui.com/3981665da18fc466c966c3df96317b79/www.imagenesdeamor.pro/wp-content/gallery/frases/imagenes-gatos-frases-amor-te-amo.jpg/150x150c/a0f4d1f00e7f9b9b1bb7665987acf71f1.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/fotos-varias-6ncXnRoTB">fotos varias</a></p>
+        </div>
+                <div class="promo"><div class="promoi">
+          <a href="/a/wachiturros-fc-y9czxRBTE"><img src="http://imgs.imagui.com/01d74030eeb4d0ea6e17191b261c5f29/www.wallvi.com/926-thickbox_default/balon-de-futbol-5.jpg/150x150c/28e563009f680f6f3c4a780a8d8e542e1.jpg" /></a>
+          <img class="avatar" src="https://graph.facebook.com//picture?type=square" title="Publicado por lorenzaamador" />
+          </div>
+          <p><a href="/a/wachiturros-fc-y9czxRBTE">Wachiturros FC</a></p>
+        </div>
+                </div>
+        <br class="clear" />
+        
+                  
+            
+      <div id="sticky-anchor"></div>
+      <div id="sidead" style="margin-left: 12px">
+                  <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-7363809219244122";
+      /* Imagui sticky */
+      google_ad_slot = "2842246447";
+      google_ad_width = 300;
+      google_ad_height = 600;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+            </div>
+
+          </div>
+        
+    <script type="text/javascript">
+$(window).bind('load', function() {
+  $('.img').each(function() {
+    if((typeof this.naturalWidth != "undefined" &&
+        this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
+         $(this).parent().parent().hide();
+    }
+  });
+})
+    </script>
+
+
+    <br class="clear" />
+  </div>
+  <a id="scroll-up" onclick="scrollTo(0,0)"></a>
+  <div id="footer">
+    <img src="/logo-footer.png" width="56" height="57" />
+    <ul>
+            <li><a href="/archivo">Imagui</a> &copy; 2012 - 2018</li>
+      <li><a href="/politica-contenido">Política de contenido</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+      <li><a href="/terminos" rel="nofollow">Términos de uso</a></li>
+      <li><a href="/politica-privacidad" rel="nofollow">Política de privacidad</a></li>
+                   <li><a href="http://thumbr.it/?_r=kYAoH.bBTHbdcB30pMLt"><img src="/thumbrio.png" width="90" height="30" id="thumbr" /></a></li>
+    </ul>
+  </div>
+  <!-- Start of StatCounter Code for Default Guide -->
+  <script type="text/javascript">
+  var sc_project=8515110; 
+  var sc_invisible=1; 
+  var sc_security="42faeb85"; 
+  var sc_https=1; 
+  var sc_remove_link=1; 
+  var scJsHost = (("https:" == document.location.protocol) ?
+  "https://secure." : "http://www.");
+  document.write("<sc"+"ript type='text/javascript' src='" +
+  scJsHost +
+  "statcounter.com/counter/counter_xhtml.js'></"+"script>");</script>
+  <noscript><div class="statcounter"><img class="statcounter"
+  src="https://c.statcounter.com/8515110/0/42faeb85/1/"
+  alt="web statistics" /></div></noscript>
+  <!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
