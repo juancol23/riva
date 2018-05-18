@@ -209,7 +209,7 @@ section{
 	border-radius: 0;
 	letter-spacing: 3px;
 	padding: 15px 80px;
-	margin-bottom: 30px;
+	margin-bottom: 30px;	
 	background-color: #e8e8e8;
 	transition: all 0.3s ease-in-out;
 }
@@ -517,6 +517,10 @@ section{
 }
 .contact .vira-card .vira-card-content p{
 	font-size: 18px;
+
+}
+.col-sm-4 p{
+	margin: 0 0 100px;
 }
 .footer{
 	background-color: #202020;
@@ -559,7 +563,9 @@ section{
 	margin: 3px;
 }
 
+.purposa row {
 
+}
 
 
 @media (max-width: 767px){
