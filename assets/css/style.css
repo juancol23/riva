@@ -210,7 +210,7 @@ section{
 	letter-spacing: 3px;
 	padding: 15px 80px;
 	margin-bottom: 30px;
-	background-color: transparent;
+	background-color: #e8e8e8;
 	transition: all 0.3s ease-in-out;
 }
 .vira-btn:hover{
@@ -333,7 +333,7 @@ section{
 	position: absolute;
 	left: -65px;
 	top: 10px;
-	color: #fff;
+	color: #000000;
 	font-size: 16px;
 }
 .m:after{
@@ -346,7 +346,7 @@ section{
 
 /*Home page*/
 .header{
-	background-image: url(../../fondo1.jpg);
+	background-image: url(../../fondo7.jpg);
 	height: 100vh;
 	position: relative;
 	min-height: 659px;
@@ -384,11 +384,11 @@ section{
 	font-size: 32px;
 	padding-top: 0;
 	padding-bottom: 40px;
-	color:  #F4F3DD;
+	color:  #DF0101;
 }
 .header .vira-btn{
-	border-color: #fff;
-	color: #fff;
+	border-color: #151515;
+	color: #151515;
 }
 .header .vira-btn:hover{
 	background-color: #fff;
