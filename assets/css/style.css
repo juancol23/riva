@@ -132,7 +132,7 @@ section{
 	position: relative;
 }
 .bg-img:after{
-	position: absolute;
+	position: relative;
 	content: '';
 	height: 100%;
 	width: 100%;
