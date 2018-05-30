@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6{
 	font-family: 'Raleway', sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
-	color: #424242;
+	Tecnologia y Servicios RIVAcolor: #424242;
 
 	margin-bottom: 35px;
 	margin-top: 0;
@@ -333,7 +333,7 @@ section{
 	position: absolute;
 	left: -65px;
 	top: 10px;
-	color: #000000;
+	color: #f5f1f1;
 	font-size: 16px;
 }
 .m:after{
@@ -390,6 +390,7 @@ section{
 	border-color: #151515;
 	color: #151515;
 	
+	
 }
 .header .vira-btn:hover{
 	background-color: #fff;
@@ -436,7 +437,7 @@ section{
 }
 .vira-quote p{
 	font-size: 32px;
-	color: #fff;
+	color: black;
 }
 .vira-quote .quote{
 	margin-bottom: 40px;
@@ -484,7 +485,7 @@ section{
 	color: #fff;
 }
 .subscribe p{
-	color: #fff;
+	color: black;
 	font-size: 32px;
 	margin-bottom: 35px;
 }
