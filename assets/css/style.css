@@ -384,11 +384,12 @@ section{
 	font-size: 32px;
 	padding-top: 0;
 	padding-bottom: 40px;
-	color:  #DF0101;
+	color:  #FBF6F6;
 }
 .header .vira-btn{
 	border-color: #151515;
 	color: #151515;
+	
 }
 .header .vira-btn:hover{
 	background-color: #fff;
