@@ -60,11 +60,12 @@ section{
 /*Bootstrap*/
 .navbar-vira{
 	background-image: none;
-	background-color: transparent;
+	background-color: #424242;
 	margin-bottom: 0;
 	border-radius: 0;
 	border-color: transparent;
 	transition: all 0.3s ease-in-out;
+
 }
 .form-control option{
 	color: #424242;
