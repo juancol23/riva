@@ -46,12 +46,12 @@
 }
 .cb-slideshow li div h3 {
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    font-size: 160px;
+    font-size: 110px;
     padding: 0 30px;
     line-height: 120px;
     color: rgba(169,3,41, 0.8);
 }
-.cb-slideshow li:nth-child(1) span { background-image: url(../image/6.jpg) }
+.cb-slideshow li:nth-child(1) span { background-image: url(../image/6.png) }
 .cb-slideshow li:nth-child(2) span {
     background-image: url(../image/5.jpg);
     -webkit-animation-delay: 6s;
